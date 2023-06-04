@@ -7,12 +7,15 @@ const errorHandler = require("../middlewares/errorHandler/errorHandler.middlewar
 
 /**
  * @swagger
+ * tags:
+ *   name: Users
+ *   description: Users routes
  * /api/users/me:
  *   get:
  *     summary: Retrieve the current logged-in user
  *     description: Retrieve the details of the current logged-in user using the JWT token
  *     tags:
- *       - User
+ *       - Users
  *     security:
  *       - BearerAuth: []
  *     responses:

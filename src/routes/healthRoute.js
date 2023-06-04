@@ -7,7 +7,7 @@ const healthController = require("../controllers/healthController");
  * @swagger
  * tags:
  *   name: Health
- *   description: Health Check
+ *   description: Health Check routes
  * /api/:
  *   get:
  *     summary: Returns health check
