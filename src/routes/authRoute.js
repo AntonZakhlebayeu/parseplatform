@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const authController = require('../controllers/authController');
-const errorHandler = require('../middlewares/errorHandler/errorHandler.middleware');
+const authController = require("../controllers/authController");
+const errorHandler = require("../middlewares/errorHandler/errorHandler.middleware");
 
 /**
  * @swagger
@@ -37,7 +37,7 @@ const errorHandler = require('../middlewares/errorHandler/errorHandler.middlewar
  *       409:
  *         description: User already registered
  */
-router.post('/auth/registration', authController.register);
+router.post("/auth/registration", authController.register);
 /**
  * @swagger
  * tags:
@@ -69,7 +69,7 @@ router.post('/auth/registration', authController.register);
  *       409:
  *         description: User already registered
  */
-router.post('/auth/complete-registration', authController.completeRegistration);
+router.post("/auth/complete-registration", authController.completeRegistration);
 /**
  * @swagger
  * tags:
@@ -103,7 +103,7 @@ router.post('/auth/complete-registration', authController.completeRegistration);
  *       404:
  *         description: User does not exist
  */
-router.post('/auth/login-initiate', authController.loginInitiate);
+router.post("/auth/login-initiate", authController.loginInitiate);
 /**
  * @swagger
  * tags:
@@ -127,7 +127,7 @@ router.post('/auth/login-initiate', authController.loginInitiate);
  *               verificationCode:
  *                 type: string
  *                 format: password
- *               rememberMe: 
+ *               rememberMe:
  *                 type: boolean
  *     responses:
  *       200:
@@ -139,7 +139,7 @@ router.post('/auth/login-initiate', authController.loginInitiate);
  *       404:
  *         description: User does not exist
  */
-router.post('/auth/login-verify', authController.loginVerify);
+router.post("/auth/login-verify", authController.loginVerify);
 
 router.use(errorHandler);
 

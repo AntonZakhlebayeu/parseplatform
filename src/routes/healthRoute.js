@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const healthController = require('../controllers/healthController');
+const healthController = require("../controllers/healthController");
 
 /**
  * @swagger
@@ -17,6 +17,6 @@ const healthController = require('../controllers/healthController');
  *       200:
  *         description: Health check successful
  */
-router.get('/', healthController.healthChecker);
+router.get("/", healthController.healthChecker);
 
 module.exports = router;

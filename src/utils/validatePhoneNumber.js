@@ -1,4 +1,4 @@
-const { PhoneNumberUtil, PhoneNumberFormat } = require('google-libphonenumber');
+const { PhoneNumberUtil, PhoneNumberFormat } = require("google-libphonenumber");
 const phoneUtil = PhoneNumberUtil.getInstance();
 
 function validatePhoneNumber(phoneNumber) {
@@ -7,15 +7,18 @@ function validatePhoneNumber(phoneNumber) {
     const phoneNumberObj = phoneUtil.parseAndKeepRawInput(phoneNumber);
     const country = phoneUtil.getRegionCodeForNumber(phoneNumberObj);
     if (!phoneUtil.isValidNumber(phoneNumberObj)) {
-      throw new Error('Invalid phone number');
+      throw new Error("Invalid phone number");
     }
-    formattedPhoneNumber = phoneUtil.format(phoneNumberObj, PhoneNumberFormat.E164);
+    formattedPhoneNumber = phoneUtil.format(
+      phoneNumberObj,
+      PhoneNumberFormat.E164
+    );
   } catch (error) {
-    const validationError = new Error('Invalid phone number');
+    const validationError = new Error("Invalid phone number");
     validationError.statusCode = 400;
     throw validationError;
   }
-  
+
   return formattedPhoneNumber;
 }
 
