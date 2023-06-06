@@ -8,11 +8,10 @@ class Config {
   }
 
   configure() {
-    const envFile = fs.readFileSync(".env");
-    const envConfig = dotenv.parse(envFile);
-    for (const key in envConfig) {
+    dotenv.config();
+    for (const key in process.env) {
       const camelCaseKey = convertToCamelCase(key);
-      this.variables[camelCaseKey] = envConfig[key];
+      this.variables[camelCaseKey] = process.env[key];
     }
   }
 
