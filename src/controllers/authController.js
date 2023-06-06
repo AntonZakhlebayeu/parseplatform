@@ -180,9 +180,7 @@ const authController = {
         { userId: user._id },
         config.getVariable("secretKey"),
         {
-          expiresIn: rememberMe
-            ? config.getVariable("expiresInRememberMe")
-            : config.getVariable("expiresIn"),
+          expiresIn: config.getVariable("expiresInRememberMe")
         }
       );
 
